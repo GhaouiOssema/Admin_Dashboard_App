@@ -15,11 +15,13 @@ import {
 } from '@syncfusion/ej2-react-grids';
 import { ordersData, contextMenuItems, ordersGrid } from '../data/dummy';
 import { Header } from '../components';
+// import { useStateContext } from '../contexts/ContextProvider';
 
 const Orders = () => {
 	const editing = { allowDeleting: true, allowEditing: true };
+	// const { currentMode } = useStateContext();
 	return (
-		<div className='m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl'>
+		<div className='m-2 md:m-4 p-2 md:p-9 bg-white rounded-3xl'>
 			<Header category='Page' title='Orders' />
 			<GridComponent
 				id='gridcomp'
@@ -28,7 +30,9 @@ const Orders = () => {
 				allowSorting
 				allowExcelExport
 				allowPdfExport
+				allowDeleting
 				contextMenuItems={contextMenuItems}
+				// background={currentMode === 'Dark' ? '#33373E' : '#fff'}
 				editSettings={editing}>
 				<ColumnsDirective>
 					{/* eslint-disable-next-line react/jsx-props-no-spreading */}
