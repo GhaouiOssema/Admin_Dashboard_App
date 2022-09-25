@@ -27,7 +27,13 @@ import './App.css';
 import { useStateContext } from './contexts/ContextProvider';
 
 const App = () => {
-	const { activeMenu, currentMode } = useStateContext();
+	const {
+		activeMenu,
+		currentMode,
+		currentColor,
+		themeSettings,
+		setThemeSettings,
+	} = useStateContext();
 
 	return (
 		<div className={currentMode === 'Dark' ? 'dark' : ''}>
@@ -39,9 +45,9 @@ const App = () => {
 						<TooltipComponent content='Settings' position='Top'>
 							<button
 								type='button'
-								// onClick={() => setThemeSettings(true)}
+								onClick={() => setThemeSettings(true)}
 								style={{
-									// background: currentColor,
+									background: currentColor,
 									borderRadius: '50%',
 								}}
 								className='text-3xl text-white p-3 hover:drop-shadow-xl hover:bg-light-gray'>
@@ -68,8 +74,7 @@ const App = () => {
 							<Navbar />
 						</div>
 						<div>
-							{/* {themeSettings && <ThemeSettings />} */}
-
+							{themeSettings && <ThemeSettings />}
 							<Routes>
 								{/* dashboard  */}
 								<Route path='/' element={<Ecommerce />} />
