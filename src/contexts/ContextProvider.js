@@ -27,8 +27,9 @@ export const ContextProvider = ({ children }) => {
 		localStorage.setItem('colorMode', color);
 	};
 
-	const handleClick = (clicked) =>
+	const handleClick = (clicked) => {
 		setIsClicked({ ...initialState, [clicked]: true });
+	};
 
 	return (
 		// eslint-disable-next-line react/jsx-no-constructed-context-values

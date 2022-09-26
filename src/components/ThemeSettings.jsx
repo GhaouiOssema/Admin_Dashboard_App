@@ -70,7 +70,7 @@ const ThemeSettings = () => {
 							<TooltipComponent
 								key={index}
 								content={item.name}
-								position='TopCenter'>
+								position='TopRight'>
 								<div
 									className='relative mt-2 cursor-pointer flex gap-5 items-center'
 									key={item.name}>

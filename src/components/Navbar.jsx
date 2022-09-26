@@ -84,9 +84,7 @@ const Navbar = () => {
 					icon={<RiNotification3Line />}
 				/>
 				<TooltipComponent content='Profile' position='BottomCenter'>
-					<div
-						className='flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg'
-						onClick={() => handleClick('userProfile')}>
+					<div className='flex items-center gap-2 p-1 hover:bg-light-gray rounded-lg'>
 						<img src={avatar} className='rounded-full w-8 h-8 ' />
 						<p>
 							<span className='text-gray-400 text-14'>Hi, </span>{' '}
@@ -94,13 +92,11 @@ const Navbar = () => {
 								Michael
 							</span>
 						</p>
-						<MdKeyboardArrowDown className='text-gray-400 text-14' />
 					</div>
 				</TooltipComponent>
 				{isClicked.cart && <Cart />}
 				{isClicked.chat && <Chat />}
 				{isClicked.notification && <Notification />}
-				{isClicked.UserProfile && <UserProfile />}
 			</div>
 		</div>
 	);
