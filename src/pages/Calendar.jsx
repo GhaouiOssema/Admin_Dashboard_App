@@ -15,10 +15,13 @@ import {
 import { DatePickerComponent } from '@syncfusion/ej2-react-calendars';
 import { scheduleData } from '../data/dummy';
 import { Header } from '../components';
+import { useStateContext } from '../contexts/ContextProvider';
 
 const PropertyPane = (props) => <div className='mt-5'>{props.children}</div>;
 
 const Calendar = () => {
+	const { currentMode } = useStateContext();
+
 	const [scheduleObj, setScheduleObj] = useState();
 	const onDragStart = (arg) => {
 		// eslint-disable-next-line no-param-reassign
@@ -29,7 +32,7 @@ const Calendar = () => {
 		scheduleObj.dataBind();
 	};
 	return (
-		<div className='m-2 md:m-9 mt-24 p-2 md:p-10 bg-white rounded-3xl'>
+		<div className='m-2 md:m-9 mt-24 p-2 md:p-10 bg-white dark:bg-secondary-dark-bg dark:text-gray-200 rounded-3xl'>
 			<Header category='App' title='Calendar' />
 			<ScheduleComponent
 				height='650px'
@@ -57,7 +60,12 @@ const Calendar = () => {
 				/>
 			</ScheduleComponent>
 			<PropertyPane>
-				<table style={{ width: '100%', background: 'white' }}>
+				<table
+					style={{
+						width: '100%',
+						backgroundColor:
+							currentMode === 'Dark' ? '#33373E' : '#fff',
+					}}>
 					<tbody>
 						<tr style={{ height: '50px' }}>
 							<td style={{ width: '100%' }}>
@@ -67,6 +75,7 @@ const Calendar = () => {
 									placeholder='Current Date'
 									floatLabelType='Always'
 									change={change}
+									style={{ color: '#fff' }}
 								/>
 							</td>
 						</tr>

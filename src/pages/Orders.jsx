@@ -21,7 +21,7 @@ const Orders = () => {
 	const editing = { allowDeleting: true, allowEditing: true };
 	const { currentMode } = useStateContext();
 	return (
-		<div className='m-2 md:m-4 p-2 md:p-9 bg-white dark:bg-secondary-dark-bg rounded-3xl dark:text-gray-200'>
+		<div className='m-2 md:m-4 p-2 md:p-9 bg-white dark:bg-secondary-dark-bg rounded-3xl dark:text-gray-400'>
 			<Header category='Page' title='Orders' />
 			<GridComponent
 				id='gridcomp'
